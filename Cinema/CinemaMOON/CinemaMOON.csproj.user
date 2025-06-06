@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AboutUsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddingFilmPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddSchedulePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminOrdersPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminPanelPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AllSchedulesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ChangeLoginPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ChangePasswordPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DeleteSchedulePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditingFilmPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HallPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainWindowForUsers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MovieDetailsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PosterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RateMoviePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RegistrationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SeatSelectionPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Dictionaries\EnglishDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\RussianDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\BlueTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AboutUsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddingFilmPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddSchedulePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminOrdersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminPanelPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AllSchedulesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ChangeLoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ChangePasswordPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DeleteSchedulePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditingFilmPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HallPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindowForUsers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MovieDetailsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PosterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RateMoviePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SeatSelectionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1188 @@
+﻿<Page
+    x:Class="CinemaMOON.Views.SeatSelectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:CinemaMOON.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:CinemaMOON.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:CinemaMOON.Models"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="clr-namespace:CinemaMOON.ViewModels"
+    Title="Seat Selection"
+    d:DesignHeight="900"
+    d:DesignWidth="1400"
+    Background="{DynamicResource PageBackgroundColor}"
+    Foreground="White"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <SolidColorBrush x:Key="GoldAccentBrush" Color="#D7B472" />
+        <SolidColorBrush x:Key="BrightGoldAccentBrush" Color="#FFD700" />
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#E0E0E0" />
+        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#AAAAAA" />
+        <SolidColorBrush x:Key="DarkElementBackgroundBrush" Color="#1C1C1C" />
+        <SolidColorBrush x:Key="SlightlyLighterDarkBrush" Color="#2A2A2A" />
+        <SolidColorBrush x:Key="ErrorTextBrush" Color="#FF6B6B" />
+        <SolidColorBrush x:Key="SeatStandardBrush" Color="Green" />
+        <SolidColorBrush x:Key="SeatLoveBrush" Color="Red" />
+        <SolidColorBrush x:Key="SeatReclinerBrush" Color="Blue" />
+        <SolidColorBrush x:Key="SeatSofaBrush" Color="Yellow" />
+        <SolidColorBrush x:Key="SeatBookedBrush" Color="#555555" />
+        <SolidColorBrush x:Key="BookingButtonBrush" Color="#4CAF50" />
+        <SolidColorBrush x:Key="BookingButtonHoverBrush" Color="#8BC34A" />
+        <SolidColorBrush x:Key="SeatSelectedBrush" Color="#FFD700" />
+
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <converters:IsSeatBookedConverter x:Key="IsSeatBookedConverter" />
+
+        <Style x:Key="PageBackButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="42" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="←" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                                <Setter Property="Foreground" Value="#888" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SeatBaseStyle" TargetType="Border">
+            <Setter Property="Width" Value="26" />
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#444" />
+            <Setter Property="Background" Value="{StaticResource SeatStandardBrush}" />
+        </Style>
+
+        <Style
+            x:Key="ClickableSeatStyle"
+            BasedOn="{StaticResource SeatBaseStyle}"
+            TargetType="Border">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                    To="1.15"
+                                    Duration="0:0:0.1" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                    To="1.15"
+                                    Duration="0:0:0.1" />
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource BrightGoldAccentBrush}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="BorderThickness"
+                                    To="1.5"
+                                    Duration="0:0:0.1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                    To="1.0"
+                                    Duration="0:0:0.1" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                    To="1.0"
+                                    Duration="0:0:0.1" />
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <SolidColorBrush Color="#444" />
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ThicknessAnimation
+                                    Storyboard.TargetProperty="BorderThickness"
+                                    To="1.0"
+                                    Duration="0:0:0.1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+                <DataTrigger Value="True">
+                    <DataTrigger.Binding>
+                        <MultiBinding Converter="{StaticResource IsSeatBookedConverter}">
+                            <Binding Path="Tag" RelativeSource="{RelativeSource Self}" />
+                            <Binding Path="DataContext.BookedSeatIds" RelativeSource="{RelativeSource AncestorType=Page}" />
+                        </MultiBinding>
+                    </DataTrigger.Binding>
+                    <Setter Property="Background" Value="{StaticResource SeatBookedBrush}" />
+                    <Setter Property="IsEnabled" Value="False" />
+                    <Setter Property="Cursor" Value="No" />
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="BorderThickness" Value="1" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style
+            x:Key="StandardSeatStyle"
+            BasedOn="{StaticResource ClickableSeatStyle}"
+            TargetType="Border">
+            <Setter Property="ToolTipService.ToolTip" Value="{Binding ToolTipText}" />
+        </Style>
+
+        <Style
+            x:Key="LoveSeatStyle"
+            BasedOn="{StaticResource ClickableSeatStyle}"
+            TargetType="Border">
+            <Setter Property="Width" Value="58" />
+            <Setter Property="Background" Value="{StaticResource SeatLoveBrush}" />
+            <Setter Property="ToolTipService.ToolTip" Value="{Binding ToolTipText}" />
+        </Style>
+
+        <Style
+            x:Key="SofaStyle"
+            BasedOn="{StaticResource ClickableSeatStyle}"
+            TargetType="Border">
+            <Setter Property="Width" Value="58" />
+            <Setter Property="Background" Value="{StaticResource SeatSofaBrush}" />
+            <Setter Property="ToolTipService.ToolTip" Value="{Binding ToolTipText}" />
+        </Style>
+
+        <Style
+            x:Key="ReclinerStyle"
+            BasedOn="{StaticResource ClickableSeatStyle}"
+            TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SeatReclinerBrush}" />
+            <Setter Property="ToolTipService.ToolTip" Value="{Binding ToolTipText}" />
+        </Style>
+
+        <Style x:Key="AisleSpacerStyle" TargetType="Border">
+            <Setter Property="Width" Value="26" />
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Arrow" />
+        </Style>
+
+        <DataTemplate x:Key="SmallHallLayoutTemplate">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border
+                    MinWidth="400"
+                    Margin="0,0,0,30"
+                    Padding="10,5"
+                    Background="#333"
+                    BorderBrush="#D7B472"
+                    BorderThickness="0,0,0,2"
+                    CornerRadius="10,10,0,0">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#D7B472"
+                        Text="{DynamicResource HallPage_Screen}" />
+                </Border>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R1S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S3" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S7" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R3S11" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S3" />
+                    <Border Width="58" Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S4" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S6" />
+                    <Border Width="58" Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S8" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R4S9" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MediumHallLayoutTemplate">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border
+                    MinWidth="450"
+                    Margin="0,0,0,30"
+                    Padding="10,5"
+                    Background="#333"
+                    BorderBrush="#D7B472"
+                    BorderThickness="0,0,0,2"
+                    CornerRadius="10,10,0,0">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#D7B472"
+                        Text="{DynamicResource HallPage_Screen}" />
+                </Border>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S3" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S7" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S11" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S3" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S7" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S11" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="LargeHallLayoutTemplate">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Border
+                    MinWidth="450"
+                    Margin="0,0,0,30"
+                    Padding="10,5"
+                    Background="#333"
+                    BorderBrush="#D7B472"
+                    BorderThickness="0,0,0,2"
+                    CornerRadius="10,10,0,0">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#D7B472"
+                        Text="{DynamicResource HallPage_Screen}" />
+                </Border>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S3" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S7" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource SofaStyle}"
+                        Tag="R1S11" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R2S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R3S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S3" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S4" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S6" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S8" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S10" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S11" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource StandardSeatStyle}"
+                        Tag="R4S12" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S3" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S7" />
+                    <Border Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S9" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource LoveSeatStyle}"
+                        Tag="R5S11" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S1" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S2" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S3" />
+                    <Border Width="58" Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S4" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S5" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S6" />
+                    <Border Width="58" Style="{StaticResource AisleSpacerStyle}" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S7" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S8" />
+                    <Border
+                        PreviewMouseLeftButtonDown="Seat_PreviewMouseLeftButtonDown"
+                        Style="{StaticResource ReclinerStyle}"
+                        Tag="R6S9" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <Style x:Key="LegendItemStyle" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+        <Style
+            x:Key="LegendSeatStyle"
+            BasedOn="{StaticResource SeatBaseStyle}"
+            TargetType="Border">
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+            <Setter Property="Width" Value="22" />
+            <Setter Property="Height" Value="22" />
+            <Style.Triggers>
+                <Trigger Property="Tag" Value="Love">
+                    <Setter Property="Width" Value="48" />
+                </Trigger>
+                <Trigger Property="Tag" Value="Sofa">
+                    <Setter Property="Width" Value="48" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="LegendTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="BookingButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource BookingButtonBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="25,12" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="5">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource BookingButtonHoverBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource BookingButtonBrush}" />
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                                <Setter TargetName="border" Property="Background" Value="#888" />
+                                <Setter Property="Cursor" Value="No" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Command="{Binding GoBackCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page}}"
+                Style="{StaticResource PageBackButtonStyle}" />
+            <TextBlock
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="30"
+                FontWeight="SemiBold"
+                Foreground="{StaticResource GoldAccentBrush}"
+                Text="{DynamicResource SeatSelectionPage_Title}" />
+        </Grid>
+        <Border
+            Grid.Row="1"
+            Margin="5,10,5,10"
+            Padding="10,5"
+            Background="{StaticResource SlightlyLighterDarkBrush}"
+            CornerRadius="3">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock
+                    Margin="0,0,5,0"
+                    FontSize="18"
+                    FontWeight="SemiBold"
+                    Foreground="{StaticResource PrimaryTextBrush}"
+                    Text="{Binding MovieTitle, Mode=OneWay, FallbackValue='Фильм'}" />
+                <TextBlock
+                    Margin="0,0,5,0"
+                    FontSize="18"
+                    Foreground="{StaticResource SecondaryTextBrush}"
+                    Text=" | " />
+                <TextBlock
+                    Margin="0,0,5,0"
+                    FontSize="18"
+                    Foreground="{StaticResource PrimaryTextBrush}"
+                    Text="{Binding HallName, Mode=OneWay, FallbackValue='Зал'}" />
+                <TextBlock
+                    Margin="0,0,5,0"
+                    FontSize="18"
+                    Foreground="{StaticResource SecondaryTextBrush}"
+                    Text=" | " />
+                <TextBlock
+                    FontSize="18"
+                    Foreground="{StaticResource PrimaryTextBrush}"
+                    Text="{Binding ShowTime, Mode=OneWay, StringFormat='dd MMMM yyyy, HH:mm', FallbackValue='Дата и время'}" />
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="2" Margin="5,0,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer
+                Grid.Column="0"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto">
+                <ContentControl
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{Binding}">
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="ContentTemplate" Value="{x:Null}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding CurrentHallType}" Value="small">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource SmallHallLayoutTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding CurrentHallType}" Value="medium">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource MediumHallLayoutTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding CurrentHallType}" Value="large">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource LargeHallLayoutTemplate}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+            </ScrollViewer>
+            <Border
+                Grid.Column="1"
+                MaxWidth="250"
+                Margin="15,0,0,0"
+                Padding="15"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="{StaticResource SlightlyLighterDarkBrush}"
+                CornerRadius="5">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,15"
+                        FontSize="22"
+                        FontWeight="SemiBold"
+                        Foreground="{StaticResource GoldAccentBrush}"
+                        Text="{DynamicResource Legend_Title}" />
+                    <StackPanel Style="{StaticResource LegendItemStyle}">
+                        <Border Background="{StaticResource SeatStandardBrush}" Style="{StaticResource LegendSeatStyle}" />
+                        <TextBlock Style="{StaticResource LegendTextStyle}"><Run FontSize="18" Text="{DynamicResource SeatSelectionPage_Legend_SeatType_Standard}" /> <Run FontWeight="SemiBold" Text=" - 15 BYN" /></TextBlock>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource LegendItemStyle}">
+                        <Border
+                            Background="{StaticResource SeatLoveBrush}"
+                            Style="{StaticResource LegendSeatStyle}"
+                            Tag="Love" />
+                        <TextBlock Style="{StaticResource LegendTextStyle}"><Run FontSize="18" Text="{DynamicResource HallPage_SeatType_LoveSeat}" /> <Run FontWeight="SemiBold" Text=" - 30 BYN" /></TextBlock>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource LegendItemStyle}">
+                        <Border
+                            Background="{StaticResource SeatSofaBrush}"
+                            Style="{StaticResource LegendSeatStyle}"
+                            Tag="Sofa" />
+                        <TextBlock Style="{StaticResource LegendTextStyle}"><Run FontSize="18" Text="{DynamicResource SeatSelectionPage_Legend_SeatType_Sofa}" /> <Run FontWeight="SemiBold" Text=" - 35 BYN" /></TextBlock>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource LegendItemStyle}">
+                        <Border Background="{StaticResource SeatReclinerBrush}" Style="{StaticResource LegendSeatStyle}" />
+                        <TextBlock Style="{StaticResource LegendTextStyle}"><Run FontSize="18" Text="{DynamicResource SeatSelectionPage_Legend_SeatType_Recliner}" /> <Run FontWeight="SemiBold" Text=" - 20 BYN" /></TextBlock>
+                    </StackPanel>
+                    <Separator Margin="0,10" Background="{StaticResource GoldAccentBrush}" />
+                    <StackPanel Style="{StaticResource LegendItemStyle}">
+                        <Border Background="{StaticResource SeatBookedBrush}" Style="{StaticResource LegendSeatStyle}" />
+                        <TextBlock Style="{StaticResource LegendTextStyle}" Text="{DynamicResource Legend_Booked}" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Border
+            Grid.Row="3"
+            Margin="5,10,5,5"
+            Padding="15,10"
+            Background="{StaticResource SlightlyLighterDarkBrush}"
+            CornerRadius="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    Foreground="{StaticResource PrimaryTextBrush}"
+                    TextWrapping="Wrap"><Run Text="{DynamicResource SeatSelectionPage_SelectedSeatsLabel}" /><Run Text=" " /><Run FontWeight="SemiBold" Text="{Binding SelectedSeatsText, Mode=OneWay, FallbackValue='---'}" /></TextBlock>
+                <Button
+                    Grid.Column="1"
+                    Margin="15,0,0,0"
+                    Command="{Binding ConfirmBookingCommand}"
+                    Content="{DynamicResource SeatSelectionPage_ConfirmButton}"
+                    IsEnabled="{Binding CanConfirmBooking}"
+                    Style="{StaticResource BookingButtonStyle}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

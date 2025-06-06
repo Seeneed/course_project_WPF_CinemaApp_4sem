@@ -1,0 +1,423 @@
+﻿<Page
+    x:Class="CinemaMOON.Views.MovieDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:CinemaMOON.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:CinemaMOON.Models"
+    xmlns:vm="clr-namespace:CinemaMOON.ViewModels"
+    Name="MovieDetailsPageSelf"
+    Title="Movie Details"
+    d:DesignHeight="900"
+    d:DesignWidth="1400"
+    Background="{DynamicResource PageBackgroundColor}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="GoldAccentBrush" Color="#D7B472" />
+        <SolidColorBrush x:Key="BrightGoldAccentBrush" Color="#FFD700" />
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#E0E0E0" />
+        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#AAAAAA" />
+        <SolidColorBrush x:Key="DarkElementBackgroundBrush" Color="#1C1C1C" />
+        <SolidColorBrush x:Key="SlightlyLighterDarkBrush" Color="#2A2A2A" />
+        <SolidColorBrush x:Key="ScheduleButtonBackground" Color="#2A2A2A" />
+        <SolidColorBrush x:Key="ScheduleButtonBorderBrush" Color="#555555" />
+        <SolidColorBrush x:Key="ScheduleButtonHoverBackground" Color="#404040" />
+        <SolidColorBrush x:Key="ScheduleButtonHoverBorderBrush" Color="#FFD700" />
+
+        <Style x:Key="PageBackButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="42" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="←" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                                <Setter Property="Foreground" Value="#888" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AdminScrollThumbStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="IsTabStop" Value="false" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border
+                            x:Name="rectangle"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="{StaticResource GoldAccentBrush}"
+                            CornerRadius="3"
+                            SnapsToDevicePixels="True" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="rectangle" Property="Background" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsDragging" Value="true">
+                                <Setter TargetName="rectangle" Property="Background" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AdminScrollBarStyle" TargetType="{x:Type ScrollBar}">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="Width" Value="10" />
+            <Setter Property="MinWidth" Value="10" />
+            <Setter Property="Height" Value="10" />
+            <Setter Property="MinHeight" Value="10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid
+                            x:Name="Bg"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="true">
+                            <Track
+                                x:Name="PART_Track"
+                                IsDirectionReversed="true"
+                                IsEnabled="{TemplateBinding IsMouseOver}">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="{x:Static ScrollBar.LineUpCommand}" Visibility="Collapsed" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="{x:Static ScrollBar.LineDownCommand}" Visibility="Collapsed" />
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource AdminScrollThumbStyle}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto" />
+                    <Setter Property="MinWidth" Value="0" />
+                    <Setter Property="Height" Value="10" />
+                    <Setter Property="MinHeight" Value="10" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid
+                                    x:Name="Bg"
+                                    Background="{TemplateBinding Background}"
+                                    SnapsToDevicePixels="true">
+                                    <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}">
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.LineLeftCommand}" Visibility="Collapsed" />
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.LineRightCommand}" Visibility="Collapsed" />
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb Style="{StaticResource AdminScrollThumbStyle}" />
+                                        </Track.Thumb>
+                                    </Track>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="DetailsScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Focusable" Value="false" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <Grid>
+                                <ScrollContentPresenter
+                                    x:Name="PART_ScrollContentPresenter"
+                                    Margin="{TemplateBinding Padding}"
+                                    CanContentScroll="{TemplateBinding CanContentScroll}"
+                                    CanHorizontallyScroll="False"
+                                    CanVerticallyScroll="True"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                <ScrollBar
+                                    x:Name="PART_VerticalScrollBar"
+                                    HorizontalAlignment="Right"
+                                    AutomationProperties.AutomationId="VerticalScrollBar"
+                                    Cursor="Arrow"
+                                    Maximum="{TemplateBinding ScrollableHeight}"
+                                    Style="{StaticResource AdminScrollBarStyle}"
+                                    ViewportSize="{TemplateBinding ViewportHeight}"
+                                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScheduleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#D7B472" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderBrush" Value="#A88D52" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="MinWidth" Value="110" />
+            <Setter Property="MinHeight" Value="45" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFD700" />
+                                <Setter Property="BorderBrush" Value="#E0B400" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#B89B5E" />
+                                <Setter Property="BorderBrush" Value="#A88D52" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.6" />
+                                <Setter TargetName="border" Property="Background" Value="#AAA" />
+                                <Setter Property="BorderBrush" Value="#888" />
+                                <Setter Property="Foreground" Value="#555" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <Button
+            Grid.Row="0"
+            Margin="15,5,0,5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Panel.ZIndex="1"
+            Command="{Binding GoBackCommand}"
+            CommandParameter="{Binding ElementName=MovieDetailsPageSelf}"
+            Style="{StaticResource PageBackButtonStyle}" />
+
+        <Grid Margin="20,50,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Column="0"
+                Margin="0,0,20,0"
+                VerticalAlignment="Top"
+                Background="{StaticResource DarkElementBackgroundBrush}"
+                BorderBrush="{StaticResource GoldAccentBrush}"
+                BorderThickness="1"
+                CornerRadius="5">
+                <Image
+                    Width="300"
+                    Height="450"
+                    VerticalAlignment="Top"
+                    Source="{Binding SelectedMovie.Photo, FallbackValue='pack://application:,,,/Resources/Images/placeholder.png', TargetNullValue='pack://application:,,,/Resources/Images/placeholder.png'}"
+                    Stretch="UniformToFill">
+                    <Image.ToolTip>
+                        <ToolTip Content="{Binding SelectedMovie.Title}" />
+                    </Image.ToolTip>
+                </Image>
+            </Border>
+
+            <ScrollViewer
+                Grid.Column="1"
+                Margin="0,0,20,0"
+                HorizontalScrollBarVisibility="Disabled"
+                Style="{StaticResource DetailsScrollViewerStyle}"
+                VerticalScrollBarVisibility="Auto">
+                <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style x:Key="DetailItemStyle" TargetType="StackPanel">
+                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Margin" Value="0,0,0,12" />
+                        </Style>
+                        <Style x:Key="LabelStyle" TargetType="TextBlock">
+                            <Setter Property="FontWeight" Value="Normal" />
+                            <Setter Property="Width" Value="170" />
+                            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+                            <Setter Property="FontSize" Value="22" />
+                            <Setter Property="VerticalAlignment" Value="Top" />
+                        </Style>
+                        <Style x:Key="ValueStyle" TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+                            <Setter Property="FontSize" Value="20" />
+                            <Setter Property="VerticalAlignment" Value="Top" />
+                        </Style>
+                        <Style
+                            x:Key="DescriptionLabelStyle"
+                            BasedOn="{StaticResource LabelStyle}"
+                            TargetType="TextBlock">
+                            <Setter Property="Width" Value="Auto" />
+                            <Setter Property="Margin" Value="0,0,0,5" />
+                        </Style>
+                        <Style x:Key="DescriptionValueStyle" TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="LineHeight" Value="18" />
+                            <Setter Property="VerticalAlignment" Value="Top" />
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <StackPanel Style="{StaticResource DetailItemStyle}">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="{DynamicResource MovieDetails_TitleLabel}" />
+                        <TextBlock
+                            FontSize="22"
+                            Style="{StaticResource ValueStyle}"
+                            Text="{Binding SelectedMovie.Title}" />
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource DetailItemStyle}">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="{DynamicResource MovieDetails_DirectorLabel}" />
+                        <TextBlock Style="{StaticResource ValueStyle}" Text="{Binding SelectedMovie.Director}" />
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource DetailItemStyle}">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="{DynamicResource MovieDetails_GenreLabel}" />
+                        <TextBlock Style="{StaticResource ValueStyle}" Text="{Binding SelectedMovie.Genre}" />
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource DetailItemStyle}">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="{DynamicResource MovieDetails_DurationLabel}" />
+                        <TextBlock Style="{StaticResource ValueStyle}" Text="{Binding SelectedMovie.Duration, StringFormat={}{0} мин}" />
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource DetailItemStyle}">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="{DynamicResource MovieDetails_AgeRatingLabel}" />
+                        <TextBlock Style="{StaticResource ValueStyle}" Text="{Binding SelectedMovie.Rating}" />
+                    </StackPanel>
+
+                    <TextBlock Style="{StaticResource DescriptionLabelStyle}" Text="{DynamicResource MovieDetails_DescriptionLabel}" />
+                    <TextBlock Style="{StaticResource DescriptionValueStyle}" Text="{Binding SelectedMovie.Description}" />
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <Border
+                Grid.Column="2"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                BorderThickness="0">
+
+                <ItemsControl ItemsSource="{Binding Showtimes}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel
+                                MaxWidth="250"
+                                HorizontalAlignment="Left"
+                                Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:Schedule}">
+                            <Button
+                                Command="{Binding DataContext.SelectShowtimeCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                Style="{StaticResource ScheduleButtonStyle}">
+                                <StackPanel>
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="18"
+                                        Text="{Binding ShowTime, StringFormat='dd MMM yyyy г.'}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="18"
+                                        FontWeight="SemiBold"
+                                        Text="{Binding ShowTime, StringFormat='HH:mm'}" />
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                    <ItemsControl.Style>
+                        <Style TargetType="ItemsControl">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Showtimes.Count}" Value="0">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ItemsControl">
+                                                <TextBlock
+                                                    Margin="10"
+                                                    FontSize="16"
+                                                    Foreground="{StaticResource SecondaryTextBrush}"
+                                                    Text="{DynamicResource MovieDetails_SchedulePlaceholder}"
+                                                    TextWrapping="Wrap" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ItemsControl.Style>
+                </ItemsControl>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

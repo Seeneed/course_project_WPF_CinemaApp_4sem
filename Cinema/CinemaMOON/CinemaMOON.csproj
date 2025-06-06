@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\BasketballDiaries.jpg" />
+    <None Remove="Resources\Images\CloseWindow.png" />
+    <None Remove="Resources\Images\FastAndTheFurious.jpg" />
+    <None Remove="Resources\Images\FightClub.jpg" />
+    <None Remove="Resources\Images\film1.jpg" />
+    <None Remove="Resources\Images\film2.jpg" />
+    <None Remove="Resources\Images\film3.jpg" />
+    <None Remove="Resources\Images\film4.jpg" />
+    <None Remove="Resources\Images\film5.jpg" />
+    <None Remove="Resources\Images\IconForCinemaApp.png" />
+    <None Remove="Resources\Images\IconForMainPage.png" />
+    <None Remove="Resources\Images\Joker.jpg" />
+    <None Remove="Resources\Images\MaximizeWindow.png" />
+    <None Remove="Resources\Images\MinimizeWindow.png" />
+    <None Remove="Resources\Images\Mr&amp;MrsSmith.jpg" />
+    <None Remove="Resources\Images\Ocean%27sEleven.jpg" />
+    <None Remove="Resources\Images\PulpFiction.jpg" />
+    <None Remove="Resources\Images\RequiemForADream.jpg" />
+    <None Remove="Resources\Images\RestoreWindow.png" />
+    <None Remove="Resources\Images\Russia.png" />
+    <None Remove="Resources\Images\Snatch.jpg" />
+    <None Remove="Resources\Images\TerrifierThree.jpg" />
+    <None Remove="Resources\Images\Theme.png" />
+    <None Remove="Resources\Images\USA.png" />
+    <None Remove="Resources\Images\VenomLastDance.jpg" />
+    <None Remove="Resources\Images\WorkingMan.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3179.45" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\BasketballDiaries.jpg" />
+    <Resource Include="Resources\Images\CloseWindow.png" />
+    <Resource Include="Resources\Images\FastAndTheFurious.jpg" />
+    <Resource Include="Resources\Images\FightClub.jpg" />
+    <Resource Include="Resources\Images\IconForCinemaApp.png" />
+    <Resource Include="Resources\Images\IconForMainPage.png" />
+    <Resource Include="Resources\Images\Joker.jpg" />
+    <Resource Include="Resources\Images\MaximizeWindow.png" />
+    <Resource Include="Resources\Images\MinimizeWindow.png" />
+    <Resource Include="Resources\Images\Mr&amp;MrsSmith.jpg" />
+    <Resource Include="Resources\Images\Ocean'sEleven.jpg" />
+    <Resource Include="Resources\Images\PulpFiction.jpg" />
+    <Resource Include="Resources\Images\RequiemForADream.jpg" />
+    <Resource Include="Resources\Images\RestoreWindow.png" />
+    <Resource Include="Resources\Images\Russia.png" />
+    <Resource Include="Resources\Images\Snatch.jpg" />
+    <Resource Include="Resources\Images\TerrifierThree.jpg" />
+    <Resource Include="Resources\Images\Theme.png" />
+    <Resource Include="Resources\Images\USA.png" />
+    <Resource Include="Resources\Images\VenomLastDance.jpg" />
+    <Resource Include="Resources\Images\WorkingMan.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,531 @@
+﻿<Page
+    x:Class="CinemaMOON.Views.AccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:CinemaMOON.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:CinemaMOON.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:CinemaMOON.ViewModels"
+    Title="{DynamicResource AccountPage_Title}"
+    d:DesignHeight="900"
+    d:DesignWidth="1400"
+    Background="{DynamicResource PageBackgroundColor}"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadOrdersCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Page.Resources>
+        <converters:ResourceKeyToValueConverter x:Key="ResourceKeyToValueConverter" />
+        <converters:SeatsToStringConverter x:Key="SeatsConverter" />
+
+        <SolidColorBrush x:Key="GoldAccentBrush" Color="#D7B472" />
+        <SolidColorBrush x:Key="BrightGoldAccentBrush" Color="#FFD700" />
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#E0E0E0" />
+        <SolidColorBrush x:Key="DarkElementBackgroundBrush" Color="#1C1C1C" />
+        <SolidColorBrush x:Key="SlightlyLighterDarkBrush" Color="#2A2A2A" />
+        <SolidColorBrush x:Key="SelectionBackgroundBrush" Color="#4A4A4A" />
+        <SolidColorBrush x:Key="GridLineBrush" Color="#444" />
+        <SolidColorBrush x:Key="StatusBookedBrush" Color="LightBlue" />
+        <SolidColorBrush x:Key="StatusPaidBrush" Color="LightGreen" />
+        <SolidColorBrush x:Key="StatusCanceledBrush" Color="OrangeRed" />
+
+        <Style x:Key="AccountButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource SlightlyLighterDarkBrush}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#353535" />
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                                <Setter TargetName="border" Property="Background" Value="#383838" />
+                                <Setter Property="BorderBrush" Value="#555" />
+                                <Setter Property="Foreground" Value="#999" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AccountDataGridStyle" TargetType="DataGrid">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource GridLineBrush}" />
+            <Setter Property="VerticalGridLinesBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="RowBackground" Value="Black" />
+            <Setter Property="AlternatingRowBackground" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="CanUserAddRows" Value="False" />
+            <Setter Property="CanUserDeleteRows" Value="False" />
+            <Setter Property="CanUserResizeRows" Value="False" />
+            <Setter Property="AutoGenerateColumns" Value="False" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="SelectionMode" Value="Single" />
+            <Setter Property="HeadersVisibility" Value="Column" />
+            <Setter Property="GridLinesVisibility" Value="All" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        </Style>
+
+        <Style x:Key="AccountDataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="BorderThickness" Value="0,0,1,1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GoldAccentBrush}" />
+        </Style>
+
+        <Style x:Key="AccountDataGridCellStyle" TargetType="DataGridCell">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Border
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" TextBlock.Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="Transparent" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="DataGridCellContentTextStyle" TargetType="TextBlock">
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        </Style>
+
+        <Style x:Key="AccountDataGridRowStyle" TargetType="DataGridRow">
+            <Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+            <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="{Binding Path=AlternatingRowBackground, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#353535" />
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SelectionBackgroundBrush}" />
+                    <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="IconButtonStyleBase" TargetType="Button">
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="5,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#33FFFFFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#66FFFFFF" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style
+            x:Key="LangButtonStyle"
+            BasedOn="{StaticResource IconButtonStyleBase}"
+            TargetType="Button" />
+        <Style
+            x:Key="ThemeButtonStyle"
+            BasedOn="{StaticResource IconButtonStyleBase}"
+            TargetType="Button" />
+
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Margin="0,0,0,25"
+            HorizontalAlignment="Center"
+            FontSize="30"
+            FontWeight="SemiBold"
+            Foreground="{StaticResource GoldAccentBrush}"
+            Text="{DynamicResource AccountPage_Title}" />
+
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Column="0"
+                Margin="0,0,15,0"
+                Padding="20"
+                Background="{StaticResource DarkElementBackgroundBrush}"
+                BorderBrush="{StaticResource GoldAccentBrush}"
+                BorderThickness="1"
+                CornerRadius="3">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,15"
+                        FontSize="22"
+                        FontWeight="SemiBold"
+                        Foreground="{StaticResource GoldAccentBrush}"
+                        Text="{DynamicResource AccountPage_UserInfoTitle}" />
+                    <StackPanel Margin="0,0,0,8" Orientation="Horizontal">
+                        <TextBlock
+                            Width="100"
+                            FontSize="20"
+                            FontWeight="SemiBold"
+                            Foreground="{StaticResource GoldAccentBrush}"
+                            Text="{DynamicResource AccountPage_Label_Name}" />
+                        <TextBlock
+                            FontSize="20"
+                            Foreground="{StaticResource PrimaryTextBrush}"
+                            Text="{Binding UserName}" />
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,8" Orientation="Horizontal">
+                        <TextBlock
+                            Width="100"
+                            FontSize="20"
+                            FontWeight="SemiBold"
+                            Foreground="{StaticResource GoldAccentBrush}"
+                            Text="{DynamicResource AccountPage_Label_Surname}" />
+                        <TextBlock
+                            FontSize="20"
+                            Foreground="{StaticResource PrimaryTextBrush}"
+                            Text="{Binding UserSurname}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Width="100"
+                            FontSize="20"
+                            FontWeight="SemiBold"
+                            Foreground="{StaticResource GoldAccentBrush}"
+                            Text="{DynamicResource AccountPage_Label_Email}" />
+                        <TextBlock
+                            FontSize="20"
+                            Foreground="{StaticResource PrimaryTextBrush}"
+                            Text="{Binding UserEmail}" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border
+                Grid.Column="1"
+                Margin="15,0,0,0"
+                Padding="20"
+                Background="{StaticResource DarkElementBackgroundBrush}"
+                BorderBrush="{StaticResource GoldAccentBrush}"
+                BorderThickness="1"
+                CornerRadius="3">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="22"
+                        FontWeight="SemiBold"
+                        Foreground="{StaticResource GoldAccentBrush}"
+                        Text="{DynamicResource AccountPage_ManagementTitle}" />
+                    <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                        <Button
+                            Margin="0,0,10,0"
+                            Command="{Binding ChangeLoginCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page}}"
+                            Content="{DynamicResource AccountPage_Button_ChangeLogin}"
+                            Style="{StaticResource AccountButtonStyle}" />
+                        <Button
+                            Margin="0,0,10,0"
+                            Command="{Binding ChangePasswordCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page}}"
+                            Content="{DynamicResource AccountPage_Button_ChangePassword}"
+                            Style="{StaticResource AccountButtonStyle}" />
+                        <Button
+                            Command="{Binding LogoutCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page}}"
+                            Content="{DynamicResource AccountPage_Button_Logout}"
+                            Style="{StaticResource AccountButtonStyle}" />
+                    </StackPanel>
+
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="22"
+                        FontWeight="SemiBold"
+                        Foreground="{StaticResource GoldAccentBrush}"
+                        Text="{DynamicResource AccountPage_SettingsTitle}" />
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                            Command="{Binding SwitchLanguageCommand}"
+                            CommandParameter="en-US"
+                            Style="{StaticResource LangButtonStyle}">
+                            <Image
+                                Width="32"
+                                Height="32"
+                                Source="/Resources/Images/USA.png"
+                                Stretch="Uniform" />
+                        </Button>
+                        <Button
+                            Command="{Binding SwitchLanguageCommand}"
+                            CommandParameter="ru-RU"
+                            Style="{StaticResource LangButtonStyle}">
+                            <Image
+                                Width="32"
+                                Height="32"
+                                Source="/Resources/Images/Russia.png"
+                                Stretch="Uniform" />
+                        </Button>
+                        <Button Command="{Binding ToggleThemeCommand}" Style="{StaticResource ThemeButtonStyle}">
+                            <Image
+                                Width="30"
+                                Height="30"
+                                Source="/Resources/Images/Theme.png"
+                                Stretch="Uniform" />
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <TextBlock
+            Grid.Row="2"
+            Margin="0,10,0,10"
+            HorizontalAlignment="Left"
+            FontSize="22"
+            FontWeight="SemiBold"
+            Foreground="{StaticResource GoldAccentBrush}"
+            Text="{DynamicResource AccountPage_OrdersTitle}" />
+
+        <Border
+            Grid.Row="3"
+            BorderBrush="{StaticResource GoldAccentBrush}"
+            BorderThickness="1"
+            CornerRadius="3">
+            <DataGrid
+                Background="{DynamicResource PageBackgroundColor}"
+                CellStyle="{StaticResource AccountDataGridCellStyle}"
+                ColumnHeaderStyle="{StaticResource AccountDataGridColumnHeaderStyle}"
+                ItemsSource="{Binding UserOrders}"
+                RowStyle="{StaticResource AccountDataGridRowStyle}"
+                SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+                Style="{StaticResource AccountDataGridStyle}">
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Width="1.8*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Movie}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Style="{StaticResource DataGridCellContentTextStyle}"
+                                    Text="{Binding Schedule.Movie.Title}"
+                                    TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="0.8*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Date}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource DataGridCellContentTextStyle}" Text="{Binding Schedule.ShowTime, StringFormat='dd.MM.yyyy'}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="0.8*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Time}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource DataGridCellContentTextStyle}" Text="{Binding Schedule.ShowTime, StringFormat='HH:mm'}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="1*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Hall}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Style="{StaticResource DataGridCellContentTextStyle}"
+                                    Text="{Binding Schedule.Hall.Name, Converter={StaticResource ResourceKeyToValueConverter}}"
+                                    TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="1.2*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Seats}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Style="{StaticResource DataGridCellContentTextStyle}"
+                                    Text="{Binding Seats, Converter={StaticResource SeatsConverter}}"
+                                    TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="0.8*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Price}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource DataGridCellContentTextStyle}" Text="{Binding TotalPrice, StringFormat='{}{0:N2} BYN'}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="1.3*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_Status}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Style="{StaticResource DataGridCellContentTextStyle}"
+                                    Text="{Binding OrderStatus, Converter={StaticResource ResourceKeyToValueConverter}}"
+                                    TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="1*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource AccountPage_OrdersGrid_Header_UserRating}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Style="{StaticResource DataGridCellContentTextStyle}"
+                                    Text="{Binding UserRating, FallbackValue='N/A'}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <StackPanel
+            Grid.Row="4"
+            Margin="0,15,0,0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Margin="0,0,10,0"
+                Command="{Binding CancelOrderCommand}"
+                Content="{DynamicResource AccountPage_Button_CancelOrder}"
+                Style="{StaticResource AccountButtonStyle}" />
+
+            <Button
+                Command="{Binding RateMovieCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page}}"
+                Content="{DynamicResource AccountPage_Button_RateMovie}"
+                Style="{StaticResource AccountButtonStyle}" />
+        </StackPanel>
+
+    </Grid>
+</Page>

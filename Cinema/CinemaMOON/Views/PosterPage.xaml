@@ -1,0 +1,373 @@
+﻿<Page
+    x:Class="CinemaMOON.Views.PosterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:CinemaMOON.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:CinemaMOON.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:CinemaMOON.ViewModels"
+    Title="{DynamicResource PosterPage_Title}"
+    d:DesignHeight="900"
+    d:DesignWidth="1400"
+    Background="{DynamicResource PageBackgroundColor}"
+    Foreground="White"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadDataCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Page.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converters:ImagePathConverter x:Key="ImagePathConverter" />
+
+        <SolidColorBrush x:Key="GoldAccentBrush" Color="#D7B472" />
+        <SolidColorBrush x:Key="BrightGoldAccentBrush" Color="#FFD700" />
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#E0E0E0" />
+        <SolidColorBrush x:Key="DarkElementBackgroundBrush" Color="#1C1C1C" />
+        <SolidColorBrush x:Key="SlightlyLighterDarkBrush" Color="#2A2A2A" />
+        <SolidColorBrush x:Key="SelectionBackgroundBrush" Color="#4A4A4A" />
+        <SolidColorBrush x:Key="GridLineBrush" Color="#444" />
+
+        <Style x:Key="FilterLabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10,0,5,0" />
+            <Setter Property="FontSize" Value="22" />
+        </Style>
+
+        <Style x:Key="FilterTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="CaretBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="MinWidth" Value="200" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AdminComboBoxToggleButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border
+                            x:Name="templateRoot"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <Border
+                                x:Name="splitBorder"
+                                Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                                Margin="0"
+                                HorizontalAlignment="Right"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="1">
+                                <Path
+                                    x:Name="arrow"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Data="F1 M 0,0 L 2.667,2.667 L 5.333,0 L 0,0 Z"
+                                    Fill="{StaticResource GoldAccentBrush}" />
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="arrow" Property="Fill" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="arrow" Property="Fill" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="arrow" Property="Fill" Value="#666" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AdminComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="MinWidth" Value="150" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
+                            </Grid.ColumnDefinitions>
+                            <Popup
+                                x:Name="PART_Popup"
+                                Grid.ColumnSpan="2"
+                                AllowsTransparency="true"
+                                IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                Placement="Bottom"
+                                PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
+                                <Border
+                                    x:Name="dropDownBorder"
+                                    MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                    Background="{StaticResource DarkElementBackgroundBrush}"
+                                    BorderBrush="{StaticResource GoldAccentBrush}"
+                                    BorderThickness="1">
+                                    <ScrollViewer x:Name="DropDownScrollViewer">
+                                        <ItemsPresenter
+                                            x:Name="ItemsPresenter"
+                                            KeyboardNavigation.DirectionalNavigation="Contained"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                            <Border
+                                Grid.ColumnSpan="2"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                                <ToggleButton
+                                    x:Name="toggleButton"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Style="{StaticResource AdminComboBoxToggleButtonStyle}" />
+                            </Border>
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding SelectionBoxItem}"
+                                ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                IsHitTestVisible="false"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Background" Value="{StaticResource DarkElementBackgroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border
+                            Name="Bd"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource SlightlyLighterDarkBrush}" />
+                                <Setter Property="Foreground" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#888" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DetailsButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource GoldAccentBrush}" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Margin" Value="0,5,0,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="0,0,3,3">
+                            <ContentPresenter
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource BrightGoldAccentBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#C6A35D" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.6" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Key="MoviePosterTemplate">
+            <Border
+                Margin="15"
+                Background="{StaticResource DarkElementBackgroundBrush}"
+                BorderBrush="{StaticResource GoldAccentBrush}"
+                BorderThickness="1"
+                CornerRadius="3">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Width" Value="200" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" Value="Maximized">
+                                <Setter Property="Width" Value="300" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <StackPanel Orientation="Vertical">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Source="{Binding Photo, Converter={StaticResource ImagePathConverter}}"
+                        Stretch="UniformToFill">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Height" Value="300" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" Value="Maximized">
+                                        <Setter Property="Height" Value="400" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Button
+                        Command="{Binding DataContext.ViewDetailsCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                        Content="{DynamicResource PosterPage_DetailsButton}"
+                        Style="{StaticResource DetailsButtonStyle}" />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+
+        <Style x:Key="NoMoviesFoundTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20" />
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Margin="30,15,30,15"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <TextBlock
+                Margin="0,0,5,0"
+                Style="{StaticResource FilterLabelStyle}"
+                Text="{DynamicResource PosterPage_GenreLabel}" />
+            <ComboBox
+                ItemsSource="{Binding AvailableGenres}"
+                SelectedItem="{Binding SelectedGenre}"
+                Style="{StaticResource AdminComboBoxStyle}" />
+
+            <TextBlock
+                Margin="20,0,5,0"
+                Style="{StaticResource FilterLabelStyle}"
+                Text="{DynamicResource PosterPage_SearchLabel}" />
+            <TextBox Style="{StaticResource FilterTextBoxStyle}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+
+            <TextBlock
+                Style="{StaticResource NoMoviesFoundTextStyle}"
+                Text="{DynamicResource PosterPage_NoMoviesFound}"
+                Visibility="{Binding ShowNoMoviesFoundMessage, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+            <ScrollViewer
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"
+                Visibility="{Binding ShowNoMoviesFoundMessage, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=inverse}">
+                <ItemsControl ItemTemplate="{StaticResource MoviePosterTemplate}" ItemsSource="{Binding DisplayedMovies}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Margin="10" Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

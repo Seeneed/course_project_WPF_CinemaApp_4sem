@@ -1,0 +1,406 @@
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.AssemblyReference.cache
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Dictionaries\EnglishDictionary.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Dictionaries\RussianDictionary.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Resources\Themes\BlueTheme.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Resources\Themes\DarkTheme.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\App.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AboutUsPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AccountPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AddingFilmPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AddSchedulePage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminOrdersPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminPanelPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminWindow.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangeLoginPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangePasswordPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\DeleteSchedulePage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\EditingFilmPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\HallPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\HomePage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindowForUsers.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MovieDetailsPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\PosterPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\RateMoviePage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\RegistrationWindow.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\SeatSelectionPage.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\App.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_Content.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_MarkupCompile.cache
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_MarkupCompile.lref
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.exe
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.deps.json
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.runtimeconfig.json
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.pdb
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Humanizer.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Build.Locator.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Convention.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Hosting.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Runtime.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.TypedParts.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.xml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AboutUsPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AccountPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AddingFilmPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AddSchedulePage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminOrdersPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminPanelPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminWindow.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangeLoginPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangePasswordPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\DeleteSchedulePage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\EditingFilmPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\HallPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\HomePage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindow.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindowForUsers.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\MovieDetailsPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\PosterPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\RateMoviePage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\RegistrationWindow.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\Views\SeatSelectionPage.baml
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.g.resources
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.GeneratedMSBuildEditorConfig.editorconfig
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.AssemblyInfoInputs.cache
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.AssemblyInfo.cs
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.CoreCompileInputs.cache
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.CopyComplete
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\refint\CinemaMOON.dll
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.pdb
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.genruntimeconfig.cache
+D:\Денис\4 сем\ООП\CourseProject — копия\CinemaMOON\obj\Debug\net8.0-windows\ref\CinemaMOON.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.exe
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.deps.json
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.runtimeconfig.json
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CinemaMOON.pdb
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Humanizer.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Build.Locator.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Convention.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Hosting.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.Runtime.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Composition.TypedParts.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.xml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.AssemblyReference.cache
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Dictionaries\EnglishDictionary.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Dictionaries\RussianDictionary.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Resources\Themes\BlueTheme.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Resources\Themes\DarkTheme.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\App.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AboutUsPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AccountPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AddingFilmPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AddSchedulePage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminOrdersPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminPanelPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminWindow.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangeLoginPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangePasswordPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\DeleteSchedulePage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\EditingFilmPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\HallPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\HomePage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindowForUsers.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MovieDetailsPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\PosterPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\RateMoviePage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\RegistrationWindow.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\SeatSelectionPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\App.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_Content.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_MarkupCompile.cache
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON_MarkupCompile.lref
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AboutUsPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AccountPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AddingFilmPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AddSchedulePage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminOrdersPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminPanelPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AdminWindow.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangeLoginPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\ChangePasswordPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\DeleteSchedulePage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\EditingFilmPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\HallPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\HomePage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindow.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MainWindowForUsers.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\MovieDetailsPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\PosterPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\RateMoviePage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\RegistrationWindow.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\SeatSelectionPage.baml
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.g.resources
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.GeneratedMSBuildEditorConfig.editorconfig
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.AssemblyInfoInputs.cache
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.AssemblyInfo.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.CoreCompileInputs.cache
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.csproj.CopyComplete
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\refint\CinemaMOON.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.pdb
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\CinemaMOON.genruntimeconfig.cache
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\ref\CinemaMOON.dll
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AllSchedulesPage.g.cs
+D:\Денис\4 сем\ООП\Cinema\CinemaMOON\obj\Debug\net8.0-windows\Views\AllSchedulesPage.baml

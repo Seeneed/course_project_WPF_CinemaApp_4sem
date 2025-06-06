@@ -1,0 +1,20 @@
+﻿CinemaMOON
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\Денис\4 сем\ООП\Cinema — копия\CinemaMOON\obj\Debug\net8.0-windows\
+CinemaMOON
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+D:\Денис\4 сем\ООП\Cinema — копия\CinemaMOON\App.xaml
+251484297780
+31536805256
+77-1415341957
+233-1617608962
+Dictionaries\EnglishDictionary.xaml;Dictionaries\RussianDictionary.xaml;Resources\Themes\BlueTheme.xaml;Resources\Themes\DarkTheme.xaml;Views\AboutUsPage.xaml;Views\AccountPage.xaml;Views\AddingFilmPage.xaml;Views\AddSchedulePage.xaml;Views\AdminOrdersPage.xaml;Views\AdminPanelPage.xaml;Views\AdminWindow.xaml;Views\AllSchedulesPage.xaml;Views\ChangeLoginPage.xaml;Views\ChangePasswordPage.xaml;Views\DeleteSchedulePage.xaml;Views\EditingFilmPage.xaml;Views\HallPage.xaml;Views\HomePage.xaml;Views\MainWindow.xaml;Views\MainWindowForUsers.xaml;Views\MovieDetailsPage.xaml;Views\PosterPage.xaml;Views\RateMoviePage.xaml;Views\RegistrationWindow.xaml;Views\SeatSelectionPage.xaml;
+
+False
+
